@@ -23,7 +23,7 @@ conectarDB();
 //permitir conexiones entrantes de otros dominios con cors
 const whiteList = [process.env.FRONTEND_URL];
 
-const cosrsOption = {
+const corsOption = {
     origin: function (origin, callback) {
         if (whiteList.includes(origin)) {
             //puede consultar el api
@@ -34,7 +34,7 @@ const cosrsOption = {
         }
     },
 };
-app.use(cors(cosrsOption));
+app.use(cors(corsOption));
 
 //definicion de las rutas o routing
 app.use("/api/roles", rolesRoutes);
